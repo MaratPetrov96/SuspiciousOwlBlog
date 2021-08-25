@@ -1,0 +1,13 @@
+{% extends 'main/BlogBase.html' %}
+{% block title %}
+{{record.title}}
+{% endblock %}
+{% block body %}
+<div class='one'>
+<h2>{{ record.title }}</h2>
+<img src='{{ record.picture.url }}' width='550' height='350'>
+{% autoescape off %}
+<p>{{ record.text|linebreaks }}</p>
+{% endautoescape %}
+</div>
+{% endblock %}

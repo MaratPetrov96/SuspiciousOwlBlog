@@ -1,0 +1,20 @@
+{% extends 'main/BlogBase.html' %}
+{% block title %}
+Новая запись
+{% endblock %}
+{% block body %}
+<form method='POST' enctype='multipart/form-data'>
+<table>
+<tr>
+<td>{{forma.title}}</td>
+</tr>
+<tr>
+<td>{{forma.anons}}</td>
+</tr>
+<tr>
+<td>{{forma.text}}</td>
+</tr>
+<tr><td>{{forma.picture}}</td></tr>
+</table>
+</form>
+{% endblock %}

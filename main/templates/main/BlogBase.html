@@ -1,0 +1,66 @@
+<html>
+<head>
+<style type='text/css'>
+.body{
+margin-left:50px;
+}
+.right{
+position:absolute;
+}
+nav *{
+display: inline-block;
+}
+.left{
+width:250px;
+position:fixed;
+}
+.right{
+margin-left:400px;
+width:1100px;
+}
+.left *{
+background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  font-size:19px;
+}
+.left a:hover {
+  background-color: #ccc;
+}
+.pages{
+margin-left:40%;
+font-size:18px;
+}
+.preview *{
+display: block;
+font-size:25px;
+margin-top:20px;
+}
+.one{
+font-size:19px;
+}
+</style>
+<title>
+{% block title %}
+{% endblock %}
+</title>
+</head>
+<body>
+<div class='body'>
+<nav>
+<h1>{% include 'main/Title.html' %}</h1>
+</nav>
+<div class='left'>
+<img src='/static/main/Preview.jpg' width='290' height='160'>
+<a href="{% url 'main' %}">Главная</a>
+<a href='/about'>Обо мне</a>
+</div>
+<div class='right'>
+{% block body %}
+{% endblock %}
+</div>
+</div>
+</body>
+</html>

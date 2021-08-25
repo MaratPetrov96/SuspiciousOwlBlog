@@ -1,0 +1,24 @@
+{% extends 'main/BlogBase.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block body %}
+{% for i in data %}
+<div class='preview'>
+<img src='{{ i.picture.url }}' width='450' height='250'>
+<a href='/{{ i.id }}'>{{ i.title }}</a>
+{% autoescape off %}
+<p>{{ i.anons }}</p>
+{% endautoescape %}
+</div>
+{% endfor %}
+<div class='pages'>
+{% if data.has_previous %}
+<a href='/p={{ data.previous_page_number }}'>{{ data.previous_page_number }}</a>
+{% endif %}
+<span>{{data.number}}</span>
+{% if data.has_next %}
+<a href='p={{ data.next_page_number }}'>{{ data.next_page_number }}</a>
+{% endif %}
+</div>
+{% endblock %}
