@@ -1,3 +1,10 @@
+from .models import Record,Comment,models
+from django.forms import ModelForm,TextInput,Textarea,DateTimeInput,ImageField,Form
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from django import forms
+from django.contrib.auth.forms import UserCreationForm
+
 class AddForm(ModelForm):
     class Meta:
         model=Record
