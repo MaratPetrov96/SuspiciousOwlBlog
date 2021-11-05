@@ -59,15 +59,12 @@ class RecordView(DetailView):
 
 class RecordUpdate(UpdateView):
     model=Record
-    template_name='main/AddForm.html'
-    #fields=['title','anons','text']
-    form_class=AddForm
-    context_object_name='forma'
+    template_name='main/Editor.html'
+    fields=['title','anons','text']
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        context['user'] = request.user
+        context['user'] = self.request.user
         return context
 
 def signup(request):
